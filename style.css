@@ -96,8 +96,11 @@ body {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Ini kuncinya: minmax memastikan kotak tidak lebih kecil dari 280px 
+       dan tidak meluas secara liar */
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
     gap: 2.5rem;
+    align-items: start; /* Memastikan kartu tidak tertarik ke bawah */
 }
 
 /* Product Card */
@@ -287,4 +290,44 @@ body {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
+}
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 0.6rem 1.5rem;
+    border: 1px solid #ddd;
+    background: white;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+    border-color: #000;
+}
+
+.filter-btn.active {
+    background: #000000;
+    border-color: #000000;
+    color: #ffffff; 
+}
+/* Animasi untuk menyembunyikan produk */
+.product-card.hide {
+    display: none;
+}
+
+.product-card.show {
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
