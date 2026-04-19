@@ -26,10 +26,17 @@
 
     <section class="catalog" id="catalog">
         <h2 class="section-title">Koleksi Terbaru</h2>
-        
-        <div class="product-grid">
-            <div class="product-card">
-                <div class="product-image">
+
+    <div class="filter-container">
+    <button class="filter-btn active" data-filter="all">Semua</button>
+    <button class="filter-btn" data-filter="outerwear">Outerwear</button>
+    <button class="filter-btn" data-filter="t-shirt">T-Shirt</button>
+    <button class="filter-btn" data-filter="knitwear">Knitwear</button>
+</div>
+
+<div class="product-grid">
+    <div class="product-card" data-category="outerwear">
+         <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=500" alt="Baju">
                     <span class="tag">Size L</span>
                 </div>
@@ -39,10 +46,9 @@
                     <p class="price">Rp 350.000</p>
                     <button class="btn-detail">Lihat Detail</button>
                 </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">
+        </div>
+    <div class="product-card" data-category="t-shirt">
+         <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=500" alt="Baju">
                     <span class="tag">Size M</span>
                 </div>
@@ -52,10 +58,9 @@
                     <p class="price">Rp 120.000</p>
                     <button class="btn-detail">Lihat Detail</button>
                 </div>
-            </div>
-
-            <div class="product-card">
-                <div class="product-image">
+        </div>
+    <div class="product-card" data-category="knitwear">
+        <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=500" alt="Baju">
                     <span class="tag">Size S</span>
                 </div>
@@ -65,8 +70,20 @@
                     <p class="price">Rp 185.000</p>
                     <button class="btn-detail">Lihat Detail</button>
                 </div>
-            </div>
         </div>
+    <div class="product-card" data-category="knitwear">
+        <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=500" alt="Baju">
+                    <span class="tag">Size S</span>
+                </div>
+                <div class="product-info">
+                    <p class="category">Knitwear</p>
+                    <h3>Cream Oversized Sweater</h3>
+                    <p class="price">Rp 185.000</p>
+                    <button class="btn-detail">Lihat Detail</button>
+                </div>
+        </div>
+</div>
     </section>
 
     <footer class="main-footer">
@@ -107,6 +124,34 @@
         <p>&copy; 2026 ThriftVibe Studio. Seluruh hak cipta dilindungi.</p>
     </div>
 </footer>
+
+<script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const productCards = document.querySelectorAll('.product-card');
+
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // 1. Hapus class 'active' dari semua tombol dan tambah ke tombol yang diklik
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+
+            const filterValue = button.getAttribute('data-filter');
+
+            // 2. Filter Produk
+           productCards.forEach(card => {
+    const cardCategory = card.getAttribute('data-category').toLowerCase();
+    
+    if (filterValue === 'all' || filterValue === cardCategory) {
+        card.classList.remove('hide'); // Hapus class hide
+        card.style.display = ""; // Biarkan CSS yang mengatur (kembali ke grid item)
+    } else {
+        card.classList.add('hide'); // Tambahkan class hide
+        card.style.display = "none"; // Sembunyikan total
+    }
+});
+        });
+    });
+</script>
 
 </body>
 </html>
