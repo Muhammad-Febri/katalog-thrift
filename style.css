@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     color: #333;
@@ -19,6 +23,10 @@ body {
     align-items: center;
     padding: 2rem 5%;
     background: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo {
@@ -47,15 +55,83 @@ body {
 
 /* Hero Section */
 .hero {
-    height: 60vh;
+    position: relative;
+    width: 100%;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    align-items: center;
+    padding: 0 8%;
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0.8), rgba(0,0,0,0.2));
+    z-index: 2;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    color: white;
+    max-width: 700px;
+}
+
+.hero-content h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+.italic-serif {
+    font-family: 'Playfair Display', serif; /* Tambahkan font ini di HTML */
+    font-style: italic;
+    font-weight: 400;
+}
+
+.hero-image-container {
+    flex: 1;
+    position: relative;
+    display: flex;
     justify-content: center;
+}
+
+.main-img {
+    width: 80%;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.floating-badge {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    background: #000;
+    color: #fff;
+    padding: 20px;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
     align-items: center;
     text-align: center;
-    padding: 0 10%;
-    background-color: #f4f4f4;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    animation: rotate 10s linear infinite;
 }
+
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
 
 .hero h1 {
     font-size: 3.5rem;
@@ -67,6 +143,30 @@ body {
     color: #666;
     margin-bottom: 2rem;
     max-width: 500px;
+}
+
+/* Marquee */
+.marquee {
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 15px 0;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.marquee-content {
+    display: inline-block;
+    animation: marquee 20s linear infinite;
+    font-size: 0.9rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+@keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
 .btn-primary {
@@ -84,6 +184,12 @@ body {
 }
 
 /* Catalog Grid */
+
+#catalog {
+    scroll-margin-top: 80px; /* Memberikan jarak agar judul tidak tertutup navbar yang melayang */
+    padding-top: 5rem;
+}
+
 .catalog {
     padding: 5rem 5%;
 }
@@ -106,7 +212,8 @@ body {
 /* Product Card */
 .product-card {
     background: #fff;
-    transition: transform 0.3s ease;
+    transform: translateY(30px);
+    transition: all 0.6s ease-out;
 }
 
 .product-card:hover {
@@ -180,9 +287,69 @@ body {
     .nav-links { display: none; } /* Sembunyikan menu di mobile untuk simpelnya */
 }
 
+
+.features-section {
+    background-color: #fff; 
+    padding: 80px 8%;
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+.features-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-item {
+    flex: 1 1 300px; /* Lebar fleksibel, minimal 300px */
+    max-width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.feature-icon {
+    background: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.feature-icon img {
+    width: 45px;
+    height: 45px;
+    /* Mengubah warna icon menjadi merah (filter CSS) */
+    filter: invert(27%) sepia(91%) saturate(2351%) hue-rotate(346deg) brightness(104%) contrast(97%);
+}
+
+.feature-item p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    font-weight: 500;
+}
+
+/* Responsif untuk layar HP agar urutannya tetap cantik */
+@media (max-width: 768px) {
+    .features-section {
+        padding: 50px 5%;
+    }
+    .feature-item {
+        flex: 1 1 100%;
+    }
+}
+
 /* Footer Styles */
 .main-footer {
-    background-color: #fff;
+    background-color: #070505;
     border-top: 1px solid #eee;
     padding: 5rem 5% 2rem;
     margin-top: 5rem;
