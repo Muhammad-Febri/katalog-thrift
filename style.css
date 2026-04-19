@@ -498,3 +498,72 @@ body {
     from { opacity: 0; transform: scale(0.9); }
     to { opacity: 1; transform: scale(1); }
 }
+
+/* --- RESPONSIVE SETTINGS --- */
+
+@media (max-width: 768px) {
+    /* 1. Hero Section: Teks jadi lebih kecil agar tidak menabrak wajah */
+    .hero {
+        padding: 0 5%;
+        justify-content: center; /* Teks ke tengah di HP */
+        text-align: center;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem; /* Ukuran h1 mengecil */
+        line-height: 1.2;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    /* 2. Filter Button: Agar bisa di-scroll ke samping kalau terlalu panjang */
+    .filter-container {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 10px;
+        justify-content: flex-start;
+    }
+
+    .filter-btn {
+        flex: 0 0 auto;
+    }
+
+    /* 3. Product Grid: Jadi 2 kolom saja di HP agar tidak kekecilan */
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 Baris ke samping */
+        gap: 15px;
+    }
+
+    .product-info h3 {
+        font-size: 0.9rem;
+    }
+
+    /* 4. Section Misi: Jadi 1 kolom (susun ke bawah) */
+    .features-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .feature-item {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
+
+    /* 5. Marquee: Teks sedikit lebih kecil */
+    .marquee-content span {
+        font-size: 0.7rem;
+    }
+}
+
+/* Khusus HP sangat kecil (Contoh: iPhone SE) */
+@media (max-width: 480px) {
+    .product-grid {
+        grid-template-columns: 1fr; /* Jadi 1 kolom saja jika layar sangat sempit */
+    }
+    
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+}
