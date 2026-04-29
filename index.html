@@ -5,50 +5,153 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ThriftVibe | Curated Vintage Catalog</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <nav class="navbar">
         <div class="logo">THRIFT<span>VIBE</span></div>
+        
+        <!-- Desktop Menu -->
         <ul class="nav-links">
-            <li><a href="#">Katalog</a></li>
-            <li><a href="#">Terbaru</a></li>
-            <li><a href="#">Tentang</a></li>
+            <li class="dropdown">
+                <a href="#catalog" class="dropdown-toggle">Katalog</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#catalog">Koleksi Terbaru</a></li>
+                    <li><a href="#outerwear">Outerwear</a></li>
+                    <li><a href="#knitwear">Knitwear</a></li>
+                    <li><a href="#t-shirt">T-Shirt & Polo</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#new-arrivals" class="dropdown-toggle">Terbaru</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#new-drop">New Drop Friday</a></li>
+                    <li><a href="#trending">Trending Now</a></li>
+                    <li><a href="#limited">Limited Edition</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#about" class="dropdown-toggle">Tentang</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#about">Nilai Kami</a></li>
+                    <li><a href="#story">Cerita Kami</a></li>
+                    <li><a href="#sustainability">Keberlanjutan</a></li>
+                    <li><a href="#contact">Kontak</a></li>
+                </ul>
+            </li>
         </ul>
+
+        <!-- Mobile Hamburger -->
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
-<div class="marquee">
-    <div class="marquee-content">
-        NEW DROP EVERY FRIDAY • WORLDWIDE SHIPPING • SUSTAINABLE FASHION • AUTHENTIC VINTAGE • 
-        NEW DROP EVERY FRIDAY • WORLDWIDE SHIPPING • SUSTAINABLE FASHION • AUTHENTIC VINTAGE • 
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay">
+        <div class="mobile-menu">
+            <div class="mobile-menu-header">
+                <h3>Menu</h3>
+                <button class="close-menu">&times;</button>
+            </div>
+            
+            <ul class="mobile-nav-links">
+                <li>
+                    <span class="mobile-main-link" data-section="catalog">Katalog</span>
+                    <ul class="mobile-submenu">
+                        <li><a href="#catalog" class="submenu-link">Koleksi Terbaru</a></li>
+                        <li><a href="#outerwear" class="submenu-link">Outerwear</a></li>
+                        <li><a href="#knitwear" class="submenu-link">Knitwear</a></li>
+                        <li><a href="#t-shirt" class="submenu-link">T-Shirt & Polo</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="mobile-main-link" data-section="new-arrivals">Terbaru</span>
+                    <ul class="mobile-submenu">
+                        <li><a href="#new-drop" class="submenu-link">New Drop Friday</a></li>
+                        <li><a href="#trending" class="submenu-link">Trending Now</a></li>
+                        <li><a href="#limited" class="submenu-link">Limited Edition</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="mobile-main-link" data-section="about">Tentang</span>
+                    <ul class="mobile-submenu">
+                        <li><a href="#about" class="submenu-link">Nilai Kami</a></li>
+                        <li><a href="#story" class="submenu-link">Cerita Kami</a></li>
+                        <li><a href="#sustainability" class="submenu-link">Keberlanjutan</a></li>
+                        <li><a href="#contact" class="submenu-link">Kontak</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
+
+    <div class="marquee">
+        <div class="marquee-content">
+            NEW DROP EVERY FRIDAY • WORLDWIDE SHIPPING • SUSTAINABLE FASHION • AUTHENTIC VINTAGE • 
+            NEW DROP EVERY FRIDAY • WORLDWIDE SHIPPING • SUSTAINABLE FASHION • AUTHENTIC VINTAGE • 
+        </div>
+    </div>
 
     <header class="hero">
         <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=1600" alt="Background" class="hero-bg">
         <div class="overlay"></div>
         
         <div class="hero-content">
+            <p class="hero-label">THRIFTVIBE COLLECTION</p>
             <h1>Trift Shop Modern <br> <span class="italic-serif">untuk Bergaya</span></h1>
-            <p><div class="logo">THRIFT<span>VIBE</span></div> menghadirkan koleksi trifting berkualitas untuk semua, dari pakaian kasual hingga tas branded. Belanja hemat, tampil gaya.</p>
+            <p class="hero-desc">Menghadirkan koleksi trifting berkualitas untuk semua, dari pakaian kasual hingga tas branded. Belanja hemat, tampil gaya.</p>
             <a href="#catalog" class="btn-primary">Jelajahi Katalog</a>
         </div>
     </header>
 
-    <section class="catalog" id="catalog">
-        <h2 class="section-title">Koleksi Terbaru</h2>
+    <section class="trust-bar">
+        <div class="trust-item">
+            <span class="trust-number">2.500+</span>
+            <span class="trust-label">Items Sold</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+            <span class="trust-number">100%</span>
+            <span class="trust-label">Authentic Vintage</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+            <span class="trust-number">Eco</span>
+            <span class="trust-label">Sustainable</span>
+        </div>
+        <div class="trust-divider"></div>
+        <div class="trust-item">
+            <span class="trust-number">4.9</span>
+            <span class="trust-label">Customer Rating</span>
+        </div>
+    </section>
 
-    <div class="filter-container">
-    <button class="filter-btn active" data-filter="all">Semua</button>
-    <button class="filter-btn" data-filter="outerwear">Outerwear</button>
-    <button class="filter-btn" data-filter="t-shirt">T-Shirt</button>
-    <button class="filter-btn" data-filter="knitwear">Knitwear</button>
-</div>
+    <section class="catalog reveal" id="catalog">
+        <div class="section-header">
+            <p class="section-label">CURATED SELECTION</p>
+            <h2 class="section-title">Koleksi Terbaru</h2>
+        </div>
 
-<div class="product-grid">
-    <div class="product-card" data-category="outerwear">
-         <div class="product-image">
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="outerwear">Outerwear</button>
+            <button class="filter-btn" data-filter="t-shirt">T-Shirt</button>
+            <button class="filter-btn" data-filter="knitwear">Knitwear</button>
+            <button class="filter-btn" data-filter="polo">Polo</button>
+        </div>
+
+        <div class="product-grid">
+            <div class="product-card" data-category="outerwear">
+                <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?auto=format&fit=crop&q=80&w=500" alt="Baju">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view">Quick View</button>
+                    </div>
                     <span class="tag">Size L</span>
                 </div>
                 <div class="product-info">
@@ -57,10 +160,14 @@
                     <p class="price">Rp 350.000</p>
                     <button class="btn-detail">Lihat Detail</button>
                 </div>
-        </div>
-    <div class="product-card" data-category="t-shirt">
-         <div class="product-image">
+            </div>
+
+            <div class="product-card" data-category="t-shirt">
+                <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&q=80&w=500" alt="Baju">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view">Quick View</button>
+                    </div>
                     <span class="tag">Size M</span>
                 </div>
                 <div class="product-info">
@@ -69,10 +176,14 @@
                     <p class="price">Rp 120.000</p>
                     <button class="btn-detail">Lihat Detail</button>
                 </div>
-        </div>
-    <div class="product-card" data-category="knitwear">
-        <div class="product-image">
+            </div>
+
+            <div class="product-card" data-category="knitwear">
+                <div class="product-image">
                     <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=500" alt="Baju">
+                    <div class="product-overlay">
+                        <button class="btn-quick-view">Quick View</button>
+                    </div>
                     <span class="tag">Size S</span>
                 </div>
                 <div class="product-info">
@@ -81,129 +192,222 @@
                     <p class="price">Rp 185.000</p>
                     <button class="btn-detail">Lihat Detail</button>
                 </div>
-        </div>
-    <div class="product-card" data-category="knitwear">
-        <div class="product-image">
-                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?auto=format&fit=crop&q=80&w=500" alt="Baju">
-                    <span class="tag">Size S</span>
+            </div>
+
+            <div class="product-card" data-category="polo">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?auto=format&fit=crop&q=80&w=500" alt="Polo Shirt">  
+                    <div class="product-overlay">
+                        <button class="btn-quick-view">Quick View</button>
+                    </div>
+                    <span class="tag">Size M</span>
                 </div>
                 <div class="product-info">
-                    <p class="category">Knitwear</p>
-                    <h3>Cream Oversized Sweater</h3>
-                    <p class="price">Rp 185.000</p>
+                    <p class="category">Polo</p>
+                    <h3>Classic Navy Polo Shirt</h3>
+                    <p class="price">Rp 165.000</p>
                     <button class="btn-detail">Lihat Detail</button>
                 </div>
+            </div>
         </div>
-</div>
     </section>
 
-    <section class="features-section">
-    <div class="features-container">
-        
-        <div class="feature-item">
-            <div class="feature-icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Kualitas">
-            </div>
-            <p>Menghadirkan produk trifting berkualitas tinggi dengan harga terjangkau.</p>
+    <section class="features-section reveal" id="about">
+        <div class="section-header light">
+            <p class="section-label">WHY US</p>
+            <h2 class="section-title">Nilai Kami</h2>
         </div>
-
-        <div class="feature-item">
-            <div class="feature-icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/2845/2845880.png" alt="Berkelanjutan">
+        <div class="features-container">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Kualitas">
+                </div>
+                <h4>Kualitas Terbaik</h4>
+                <p>Menghadirkan produk trifting berkualitas tinggi dengan harga terjangkau.</p>
             </div>
-            <p>Mendorong kesadaran akan gaya hidup berkelanjutan melalui circular economy.</p>
-        </div>
-
-        <div class="feature-item">
-            <div class="feature-icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/3163/3163181.png" alt="Komunitas">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2845/2845880.png" alt="Berkelanjutan">
+                </div>
+                <h4>Sustainable</h4>
+                <p>Mendorong kesadaran akan gaya hidup berkelanjutan melalui circular economy.</p>
             </div>
-            <p>Memberdayayakan komunitas lokal dengan peluang usaha dan kolaborasi.</p>
-        </div>
-
-        <div class="feature-item">
-            <div class="feature-icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/2621/2621846.png" alt="Edukasi">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3163/3163181.png" alt="Komunitas">
+                </div>
+                <h4>Komunitas Lokal</h4>
+                <p>Memberdayakan komunitas lokal dengan peluang usaha dan kolaborasi.</p>
             </div>
-            <p>Mengedukasi masyarakat tentang nilai keberlanjutan dalam fashion.</p>
-        </div>
-
-        <div class="feature-item">
-            <div class="feature-icon">
-                <img src="https://cdn-icons-png.flaticon.com/512/963/963643.png" alt="Inovasi">
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2621/2621846.png" alt="Edukasi">
+                </div>
+                <h4>Edukasi</h4>
+                <p>Mengedukasi masyarakat tentang nilai keberlanjutan dalam fashion.</p>
             </div>
-            <p>Mengembangkan inovasi dalam pengolahan, distribusi, dan pemasaran produk preloved.</p>
+            <div class="feature-item">
+                <div class="feature-icon">
+                    <img src="https://cdn-icons-png.flaticon.com/512/963/963643.png" alt="Inovasi">
+                </div>
+                <h4>Inovasi</h4>
+                <p>Mengembangkan inovasi dalam pengolahan, distribusi, dan pemasaran produk preloved.</p>
+            </div>
         </div>
-
-    </div>
-</section>
+    </section>
 
     <footer class="main-footer">
-    <div class="footer-container">
-        <div class="footer-column">
-            <div class="logo footer-logo">THRIFT<span>VIBE</span></div>
-            <p class="footer-desc">
-                Curated vintage and pre-loved fashion. Kami memilih setiap helai pakaian dengan teliti untuk memastikan Anda mendapatkan kualitas terbaik.
-            </p>
-            <div class="social-links">
-                <a href="#">Instagram</a>
-                <a href="#">TikTok</a>
-                <a href="#">WhatsApp</a>
+        <div class="footer-container">
+            <div class="footer-column brand-column">
+                <div class="logo footer-logo">THRIFT<span>VIBE</span></div>
+                <p class="footer-desc">
+                    Curated vintage and pre-loved fashion. Kami memilih setiap helai pakaian dengan teliti untuk memastikan Anda mendapatkan kualitas terbaik.
+                </p>
+                <div class="social-links">
+                    <a href="#">Instagram</a>
+                    <a href="#">TikTok</a>
+                    <a href="#">WhatsApp</a>
+                </div>
+            </div>
+
+            <div class="footer-column">
+                <h3>Bantuan</h3>
+                <ul>
+                    <li><a href="#">Cara Order</a></li>
+                    <li><a href="#">Info Pengiriman</a></li>
+                    <li><a href="#">Panduan Ukuran</a></li>
+                    <li><a href="#">Kebijakan Retur</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column">
+                <h3>Update Koleksi</h3>
+                <p class="footer-text">Dapatkan info koleksi terbaru langsung di email Anda.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Alamat Email">
+                    <button type="submit">Gabung</button>
+                </form>
             </div>
         </div>
 
-        <div class="footer-column">
-            <h3>Bantuan</h3>
-            <ul>
-                <li><a href="#">Cara Order</a></li>
-                <li><a href="#">Info Pengiriman</a></li>
-                <li><a href="#">Panduan Ukuran</a></li>
-                <li><a href="#">Kebijakan Retur</a></li>
-            </ul>
+        <div class="footer-bottom">
+            <p>&copy; 2026 ThriftVibe Studio. Seluruh hak cipta dilindungi.</p>
         </div>
+    </footer>
 
-        <div class="footer-column">
-            <h3>Update Koleksi</h3>
-            <p>Dapatkan info koleksi terbaru langsung di email Anda.</p>
-            <form class="newsletter-form">
-                <input type="email" placeholder="Alamat Email">
-                <button type="submit">Gabung</button>
-            </form>
-        </div>
-    </div>
+    <script>
+        // Filter Functionality (same as before)
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const productCards = document.querySelectorAll('.product-card');
 
-    <div class="footer-bottom">
-        <p>&copy; 2026 ThriftVibe Studio. Seluruh hak cipta dilindungi.</p>
-    </div>
-</footer>
-
-<script>
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const productCards = document.querySelectorAll('.product-card');
-
-    filterButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // 1. Hapus class 'active' dari semua tombol dan tambah ke tombol yang diklik
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-
-            const filterValue = button.getAttribute('data-filter');
-
-            // 2. Filter Produk
-           productCards.forEach(card => {
-    const cardCategory = card.getAttribute('data-category').toLowerCase();
-    
-    if (filterValue === 'all' || filterValue === cardCategory) {
-        card.classList.remove('hide'); // Hapus class hide
-        card.style.display = ""; // Biarkan CSS yang mengatur (kembali ke grid item)
-    } else {
-        card.classList.add('hide'); // Tambahkan class hide
-        card.style.display = "none"; // Sembunyikan total
-    }
-});
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filterValue = button.getAttribute('data-filter');
+                productCards.forEach(card => {
+                    const cardCategory = card.getAttribute('data-category').toLowerCase();
+                    if (filterValue === 'all' || filterValue === cardCategory) {
+                        card.classList.remove('hide');
+                        card.style.display = "";
+                        setTimeout(() => card.classList.add('show'), 10);
+                    } else {
+                        card.classList.remove('show');
+                        card.classList.add('hide');
+                        setTimeout(() => card.style.display = "none", 300);
+                    }
+                });
+            });
         });
-    });
-</script>
+
+        // Scroll Reveal (same)
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Navbar Functionality - PERFECTLY FIXED
+        const hamburger = document.querySelector('.hamburger');
+        const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+        const closeMenuBtn = document.querySelector('.close-menu');
+        const mainLinks = document.querySelectorAll('.mobile-main-link');
+        const submenuLinks = document.querySelectorAll('.submenu-link');
+
+        // Toggle menu (buka jika tutup, tutup jika sudah jadi X)
+        hamburger.addEventListener('click', () => {
+            if (hamburger.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                hamburger.classList.add('active');
+                mobileOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        // Close with X button
+        closeMenuBtn.addEventListener('click', closeMobileMenu);
+
+        // Close on overlay click
+        mobileOverlay.addEventListener('click', (e) => {
+            if (e.target === mobileOverlay) closeMobileMenu();
+        });
+
+        // Close function
+        function closeMobileMenu() {
+            hamburger.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+            mainLinks.forEach(link => link.classList.remove('active'));
+            document.querySelectorAll('.mobile-submenu').forEach(submenu => submenu.classList.remove('active'));
+        }
+
+        // Toggle submenu (expand/collapse) - hanya toggle, TIDAK menutup menu utama
+        mainLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const submenu = link.nextElementSibling;
+                const isOpen = submenu.classList.contains('active');
+
+                // Tutup semua submenu lain dulu
+                document.querySelectorAll('.mobile-submenu').forEach(s => s.classList.remove('active'));
+                mainLinks.forEach(l => l.classList.remove('active'));
+
+                // Jika submenu ini belum terbuka, buka sekarang
+                if (!isOpen) {
+                    submenu.classList.add('active');
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Tutup menu utama hanya saat klik link submenu (navigasi ke section)
+        submenuLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.stopPropagation();
+                closeMobileMenu();
+            });
+        });
+
+        // Close on resize to desktop
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+
+        // ESC key close
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileOverlay.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+    </script>
 
 </body>
 </html>
